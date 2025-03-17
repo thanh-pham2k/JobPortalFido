@@ -48,7 +48,7 @@ class JobApplicationServiceTest {
 
 	@BeforeEach
 	void setUp() {
-		user = User.builder().id(1L).name("John Doe").build();
+		user = User.builder().id(1L).email("john.doe@example.com").build();
 		job = Job.builder().id(1L).title("Software Engineer").build();
 		jobApplication = JobApplication.builder()
 				.id(1L)
@@ -61,12 +61,12 @@ class JobApplicationServiceTest {
 
 	@Test
 	void applyForJob_Success() {
-		when(userRepository.findById(1L)).thenReturn(Optional.of(user));
-		when(jobRepository.findById(1L)).thenReturn(Optional.of(job));
+		when(userRepository.findByEmail(user.getEmail())).thenReturn(Optional.of(user));
+		when(jobRepository.findById(job.getId())).thenReturn(Optional.of(job));
 		when(jobApplicationRepository.findByUserAndJob(user, job)).thenReturn(Optional.empty());
 		when(jobApplicationRepository.save(any(JobApplication.class))).thenReturn(jobApplication);
 
-		JobApplication result = jobApplicationService.applyForJob(1L, 1L);
+		JobApplication result = jobApplicationService.applyForJob(user.getEmail(), job.getId());
 
 		assertNotNull(result);
 		assertEquals(ApplicationStatus.PENDING, result.getStatus());
@@ -75,10 +75,10 @@ class JobApplicationServiceTest {
 
 	@Test
 	void applyForJob_UserNotFound() {
-		when(userRepository.findById(1L)).thenReturn(Optional.empty());
+		when(userRepository.findByEmail(user.getEmail())).thenReturn(Optional.empty());
 
 		Exception exception = assertThrows(RuntimeException.class, () -> {
-			jobApplicationService.applyForJob(1L, 1L);
+			jobApplicationService.applyForJob(user.getEmail(), job.getId());
 		});
 
 		assertEquals("User not found", exception.getMessage());
@@ -86,11 +86,11 @@ class JobApplicationServiceTest {
 
 	@Test
 	void applyForJob_JobNotFound() {
-		when(userRepository.findById(1L)).thenReturn(Optional.of(user));
-		when(jobRepository.findById(1L)).thenReturn(Optional.empty());
+		when(userRepository.findByEmail(user.getEmail())).thenReturn(Optional.of(user));
+		when(jobRepository.findById(job.getId())).thenReturn(Optional.empty());
 
 		Exception exception = assertThrows(RuntimeException.class, () -> {
-			jobApplicationService.applyForJob(1L, 1L);
+			jobApplicationService.applyForJob(user.getEmail(), job.getId());
 		});
 
 		assertEquals("Job not found", exception.getMessage());
@@ -98,12 +98,12 @@ class JobApplicationServiceTest {
 
 	@Test
 	void applyForJob_UserAlreadyApplied() {
-		when(userRepository.findById(1L)).thenReturn(Optional.of(user));
-		when(jobRepository.findById(1L)).thenReturn(Optional.of(job));
+		when(userRepository.findByEmail(user.getEmail())).thenReturn(Optional.of(user));
+		when(jobRepository.findById(job.getId())).thenReturn(Optional.of(job));
 		when(jobApplicationRepository.findByUserAndJob(user, job)).thenReturn(Optional.of(jobApplication));
 
 		Exception exception = assertThrows(RuntimeException.class, () -> {
-			jobApplicationService.applyForJob(1L, 1L);
+			jobApplicationService.applyForJob(user.getEmail(), job.getId());
 		});
 
 		assertEquals("User đã apply job này rồi!", exception.getMessage());
@@ -111,10 +111,10 @@ class JobApplicationServiceTest {
 
 	@Test
 	void updateApplicationStatus_Success() {
-		when(jobApplicationRepository.findById(1L)).thenReturn(Optional.of(jobApplication));
+		when(jobApplicationRepository.findById(jobApplication.getId())).thenReturn(Optional.of(jobApplication));
 		when(jobApplicationRepository.save(any(JobApplication.class))).thenReturn(jobApplication);
 
-		JobApplication result = jobApplicationService.updateApplicationStatus(1L,
+		JobApplication result = jobApplicationService.updateApplicationStatus(jobApplication.getId(),
 				JobApplication.ApplicationStatus.ACCEPTED);
 
 		assertNotNull(result);
@@ -124,12 +124,13 @@ class JobApplicationServiceTest {
 
 	@Test
 	void updateApplicationStatus_ApplicationNotFound() {
-		when(jobApplicationRepository.findById(1L)).thenReturn(Optional.empty());
+		when(jobApplicationRepository.findById(jobApplication.getId())).thenReturn(Optional.empty());
 
 		Exception exception = assertThrows(RuntimeException.class, () -> {
-			jobApplicationService.updateApplicationStatus(1L, ApplicationStatus.ACCEPTED);
+			jobApplicationService.updateApplicationStatus(jobApplication.getId(), ApplicationStatus.ACCEPTED);
 		});
 
 		assertEquals("Application not found", exception.getMessage());
 	}
 }
+

@@ -12,7 +12,7 @@ INSERT INTO
 VALUES
     (
         1,
-        'John Doe',\
+        'John Doe',
         'john.doe@example.com',
         'password123',
         'resume_john.pdf'

@@ -25,8 +25,8 @@ public class JobApplicationService {
     @Autowired
     private JobRepository jobRepository;
 
-    public JobApplication applyForJob(Long userId, Long jobId) {
-        User user = userRepository.findById(userId)
+    public JobApplication applyForJob(String email, Long jobId) {
+        User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("User not found"));
         Job job = jobRepository.findById(jobId)
                 .orElseThrow(() -> new RuntimeException("Job not found"));
@@ -55,4 +55,9 @@ public class JobApplicationService {
         application.setStatus(status);
         return jobApplicationRepository.save(application);
     }
+
+    public JobApplication save(JobApplication application) {
+        return jobApplicationRepository.save(application);
+    }
 }
+

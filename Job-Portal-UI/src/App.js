@@ -3,6 +3,7 @@ import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import JobDetails from "./pages/JobDetails";
+import JobManagement from "./pages/JobManagement";
 
 const { Header, Content } = Layout;
 
@@ -37,6 +38,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/jobs/:id" element={<JobDetails />} />
+            <Route path="/managements/jobs" element={<JobManagement />} />
           </Routes>
         </Content>
       </Layout>
