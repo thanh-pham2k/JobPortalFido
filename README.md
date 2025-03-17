@@ -16,12 +16,11 @@ This is a **Job Portal Management System** that allows administrators to manage 
 - Manage company profiles
 
 ### **User Features**
-- Register and log in
-- Create and update user profiles
+- Log in/Logout
+- Create Jobs
 - Browse available jobs
 - Apply for jobs
-- Track application status
-
+- Track application status(PENDING, ACCEPTED, REJECTED)
 ## Database Models
 - **User**: Stores user information and their job applications
 - **Profile**: Stores user profile details (bio, LinkedIn, GitHub, skills, etc.)
@@ -44,5 +43,3 @@ This is a **Job Portal Management System** that allows administrators to manage 
    - Starts the ReactJS application.
 
 ---
-
-Bạn có thể bổ sung thêm nếu cần mô tả chi tiết hơn. 🚀
