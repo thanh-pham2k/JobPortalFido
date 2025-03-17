@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:h2:file:C:/Users/ankku/test;DB_CLOSE_DELAY=-1;AUTO_RECONNECT=TRUE
+    url: jdbc:h2:file:F:\THANH\JobPortalFido\Job-Portal\data;DB_CLOSE_DELAY=-1;AUTO_RECONNECT=TRUE
     driver-class-name: org.h2.Driver
     username: sa
     password:
