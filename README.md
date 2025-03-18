@@ -199,7 +199,11 @@ npm start
 
 ## Further improve
 1️⃣ Write unit tests → Increase reliability and ensure code quality.
+
 2️⃣ Add APIs for job search business logic → Enhance job search functionalities.
+
 3️⃣ Implement filters for tables → Improve data management and user experience.
+
 4️⃣ Integrate Spring Security for authentication → Currently using stateful authentication, consider switching to JWT for stateless authentication.
+
 5️⃣ Improve UI/UX → Enhance the user interface and overall user experience.
