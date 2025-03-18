@@ -80,8 +80,8 @@ The **Job Portal Management System** enables administrators to manage job listin
 
 ## How to Run
 
-**Make sure you run the data.sql script before testing.
-**
+Make sure you run the data.sql script before testing.
+
 
 ### **1. Backend**
 
