@@ -1,6 +1,7 @@
 package com.example.Job.Portal.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.Job.Portal.dto.JobApplicationDTO;
+import com.example.Job.Portal.dto.UserDTO;
 import com.example.Job.Portal.entity.User;
 import com.example.Job.Portal.service.UserService;
 
@@ -25,9 +28,28 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping
-    public ResponseEntity<List<User>> getAllUsers() {
+    public ResponseEntity<List<UserDTO>> getAllUsers() {
         List<User> users = userService.getAllUsers();
-        return ResponseEntity.ok(users);
+        List<UserDTO> userDTOs = users.stream()
+                .map(user -> UserDTO.builder()
+                        .id(user.getId())
+                        .name(user.getName())
+                        .email(user.getEmail())
+                        .password(user.getPassword())
+                        .profile(user.getProfile())
+                        .resume(user.getResume())
+                        .jobApplications(user.getJobApplications().stream()
+                                .map(jobApp -> JobApplicationDTO.builder()
+                                        .id(jobApp.getId())
+                                        .user(null)
+                                        .job(jobApp.getJob())
+                                        .status(jobApp.getStatus())
+                                        .appliedAt(jobApp.getAppliedAt())
+                                        .build())
+                                .collect(Collectors.toList()))
+                        .build())
+                .collect(Collectors.toList());
+        return ResponseEntity.ok(userDTOs);
     }
 
     @GetMapping("/{id}")
@@ -54,4 +76,3 @@ public class UserController {
         return ResponseEntity.noContent().build();
     }
 }
-

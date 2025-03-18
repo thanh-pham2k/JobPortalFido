@@ -1,12 +1,13 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/job_portal
-    driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: password
+    url: jdbc:h2:file:F:/THANH/JobPortalFido/Job-Portal/data;DB_CLOSE_DELAY=-1;AUTO_RECONNECT=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
   jpa:
     hibernate:
-      ddl-auto: update  # Use 'update' for development; 'validate' for production
+      ddl-auto: create-drop  # Ensures tables are created
+      # ddl-auto: update  # Ensures tables are created
     properties:
       hibernate:
         format_sql: true
@@ -16,6 +17,10 @@ spring:
       mode: always
       data-locations: classpath:data.sql
       continue-on-error: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
   security:
     session:
       creation-policy: IF_REQUIRED  # Create a session if needed
@@ -23,8 +28,9 @@ spring:
 server:
   servlet:
     session:
-      timeout: 30m  # ✅ Session tồn tại 30 phút
+      timeout: 30m  # Session lasts 30 minutes
       cookie:
         secure: true
         http-only: true
       tracking-modes: cookie
+

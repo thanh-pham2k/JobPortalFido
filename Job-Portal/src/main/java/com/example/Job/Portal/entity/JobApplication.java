@@ -26,6 +26,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+
 public class JobApplication {
     public enum ApplicationStatus {
         PENDING, ACCEPTED, REJECTED

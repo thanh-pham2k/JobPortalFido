@@ -1,8 +1,12 @@
 body {
-  background: linear-gradient(135deg, rgba(173, 216, 230, 0.2), rgba(255, 255, 255, 0.3));
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.7),
+    rgba(240, 240, 240, 0.9)
+  ); /* Nền sáng */
   backdrop-filter: blur(20px);
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
+  font-family: "Poppins", sans-serif;
+  color: #2c2c2c; /* Màu chữ đậm hơn cho nền sáng */
   margin: 0;
   padding: 0;
 }
@@ -12,31 +16,46 @@ body {
 }
 
 .ant-card {
-  background: rgba(255, 255, 255, 0.2) !important;
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(12px);
   border-radius: 15px !important;
-  padding: 10px;
-  transition: 0.3s;
+  padding: 15px;
+  transition: all 0.3s ease-in-out;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.ant-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1), 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .ant-input {
-  background: rgba(255, 255, 255, 0.3) !important;
+  background: rgba(255, 255, 255, 0.15) !important;
   border-radius: 10px !important;
   color: white !important;
-  border: none !important;
-  padding: 10px;
-  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  padding: 12px;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease-in-out;
+}
+
+.ant-input:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
 }
 
 .ant-input::placeholder {
-  color: rgba(255, 255, 255, 0.6) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.ant-btn {
+  background: linear-gradient(135deg, #1890ff, #722ed1) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 10px !important;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.ant-btn:hover {
+  background: linear-gradient(135deg, #722ed1, #1890ff) !important;
+  transform: scale(1.05);
 }
 
 .ant-list {
@@ -48,7 +67,17 @@ body {
   white-space: nowrap;
 }
 
-.ant-input{
+
+.ant-input {
   color: black !important;
-  border: 1px solid red !important;
+  border: 1px solid #1677ff !important;
+}
+
+.ant-input::placeholder {
+  color: rgba(0,0,0,0.88) !important;
+}
+
+
+.ant-pagination{
+  justify-content: center !important;
 }

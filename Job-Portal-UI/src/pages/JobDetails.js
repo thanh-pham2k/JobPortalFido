@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { fetchJobById } from "../services/jobService";
 
 const GlassContainer = styled.div`
   display: flex;
@@ -16,12 +17,13 @@ const GlassContainer = styled.div`
   margin: auto;
 `;
 
+
 const JobDetails = () => {
     const { id } = useParams();
     const [job, setJob] = useState(null);
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/api/jobs/${id}`).then((response) => {
+        fetchJobById(id).then((response) => {
             setJob(response.data);
         });
     }, [id]);
