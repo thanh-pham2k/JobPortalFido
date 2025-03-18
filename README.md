@@ -4,6 +4,8 @@
 The **Job Portal Management System** enables administrators to manage job listings and track user applications. Users can browse job postings and apply for jobs. The system includes a **Spring Boot backend** and a **ReactJS frontend with Ant Design UI**.
 
 ## UML Diagram
+```
+
 +-----------------+        +-----------------+
 |     User        |        |   Profile       |
 +-----------------+        +-----------------+
@@ -49,7 +51,7 @@ The **Job Portal Management System** enables administrators to manage job listin
 | + getCompany(): Company |
 | + getJobApplications(): List<JobApplication> |
 +-----------------+
-
+```
 
 
 ## Tech Stack
