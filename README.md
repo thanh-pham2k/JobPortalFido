@@ -55,14 +55,13 @@ The **Job Portal Management System** enables administrators to manage job listin
 
 
 ## Tech Stack
-- **Backend**: Spring Boot, H2 Database
+- **Backend**: Spring Boot, Postgres
 - **Frontend**: ReactJS, Ant Design
 
 ## Features
 ### **Admin Features**
 - Manage job listings (add, update, delete)
 - View applicants for each job
-- Manage company profiles
 - Manage user accounts
 
 ### **User Features**
@@ -82,11 +81,29 @@ The **Job Portal Management System** enables administrators to manage job listin
 ## How to Run
 
 ### **1. Backend**
+
+
+**Pull Docker image**
+```sh
+docker run -d \
+  --name job_portal_db \
+  -e POSTGRES_USER=postgres \
+  -e POSTGRES_PASSWORD=password \
+  -e POSTGRES_DB=job_portal \
+  -p 5432:5432 \
+  -v postgres_data:/var/lib/postgresql/data \
+  postgres:latest
+```
+
+**Starts the Spring Boot backend.
+**
 ```sh
 mvn clean install
 mvn spring-boot:run
 ```
-- Starts the Spring Boot backend.
+
+
+
 
 ### **2. Frontend**
 ```sh
