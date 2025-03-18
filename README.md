@@ -128,21 +128,21 @@ npm start
 ---
 
 ## Demo
-Main Screen
+- Main Screen
 ![image](https://github.com/user-attachments/assets/b39e3639-54be-4f71-a647-b46d5ad605de)
 
-**Job Search
-**
+- Job Search
+
 
 ![image](https://github.com/user-attachments/assets/81b7ac47-8589-40ff-b1ba-e75659611285)
 
-**Login & Apply for a Job
-**
+- Login & Apply for a Job
+
 
 ![image](https://github.com/user-attachments/assets/635f6b34-b886-4eb8-9f89-a5d43649085b)
 
-**Apply for a Job (Already Applied Jobs Cannot Be Reapplied)
-**
+- Apply for a Job (Already Applied Jobs Cannot Be Reapplied)
+
 
 ![image](https://github.com/user-attachments/assets/87ced542-951b-4d01-b641-dfca6304628f)
 
