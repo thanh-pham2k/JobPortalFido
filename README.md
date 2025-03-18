@@ -130,11 +130,20 @@ npm start
 ## Demo
 Main Screen
 ![image](https://github.com/user-attachments/assets/b39e3639-54be-4f71-a647-b46d5ad605de)
-Job Search
+
+**Job Search
+**
+
 ![image](https://github.com/user-attachments/assets/81b7ac47-8589-40ff-b1ba-e75659611285)
-Login & Apply for a Job
+
+**Login & Apply for a Job
+**
+
 ![image](https://github.com/user-attachments/assets/635f6b34-b886-4eb8-9f89-a5d43649085b)
-Apply for a Job (Already Applied Jobs Cannot Be Reapplied)
+
+**Apply for a Job (Already Applied Jobs Cannot Be Reapplied)
+**
+
 ![image](https://github.com/user-attachments/assets/87ced542-951b-4d01-b641-dfca6304628f)
 
 
@@ -142,41 +151,50 @@ Apply for a Job (Already Applied Jobs Cannot Be Reapplied)
 ### Admin Panel
 **Admin Login (admin@gmail.com) - Panel Button Visible
 **
+
 ![image](https://github.com/user-attachments/assets/a2baaadf-0e7b-49b9-8835-6161c908738a)
 **Successful Login - Access to Admin Panel
 **
+
 ![image](https://github.com/user-attachments/assets/dfcf927d-a6e1-452d-b7a7-e00ada3d4784)
 
 
 ### User Management (Add, Edit, Update Users)
 **User List & Editing
 **
+
 ![image](https://github.com/user-attachments/assets/285f0be4-7bff-43cb-8f02-d7dd2afc1cf0)
 ![image](https://github.com/user-attachments/assets/16987193-e979-4568-99ea-9a10b5282c1a)
 ![image](https://github.com/user-attachments/assets/452f12b0-00f5-4965-acea-a2a696137260)
 
 **After Adding a User
 **
+
 ![image](https://github.com/user-attachments/assets/df8d7ba9-0f49-45f7-a614-c9163d53f597)
 
 **Update (Fixed Typo in "Frontend DeveloperR")
 **
+
 ![image](https://github.com/user-attachments/assets/8c50a704-0c17-463f-aed8-0bf39faa0494)
 
 **Successful Update
 **
+
 ![image](https://github.com/user-attachments/assets/4ba0aaee-246d-4e53-b894-a51c66097015)
 
 **Delete Recently Updated User
 **
+
 ![image](https://github.com/user-attachments/assets/b3166af7-5d18-4b94-ae9d-47246ac1cd31)
 
 ### Job Management (CRUD Operations for Jobs)
 **Follows the same workflow as user management.
 **
+
 ### Application Management (Approve, Reject, Edit Applications)
 
 **Approve First 3, Reject the Next 2
 **
+
 ![image](https://github.com/user-attachments/assets/0f553c0e-5155-454b-8708-04b5cfd35fb2)
 
