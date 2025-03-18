@@ -160,41 +160,39 @@ npm start
 
 
 ### User Management (Add, Edit, Update Users)
-**User List & Editing
-**
+- User List & Editing
+
 
 ![image](https://github.com/user-attachments/assets/285f0be4-7bff-43cb-8f02-d7dd2afc1cf0)
 ![image](https://github.com/user-attachments/assets/16987193-e979-4568-99ea-9a10b5282c1a)
 ![image](https://github.com/user-attachments/assets/452f12b0-00f5-4965-acea-a2a696137260)
 
-**After Adding a User
-**
+- After Adding a User
+
 
 ![image](https://github.com/user-attachments/assets/df8d7ba9-0f49-45f7-a614-c9163d53f597)
 
-**Update (Fixed Typo in "Frontend DeveloperR")
-**
+- Update (Fixed Typo in "Frontend DeveloperR")
+
 
 ![image](https://github.com/user-attachments/assets/8c50a704-0c17-463f-aed8-0bf39faa0494)
 
-**Successful Update
-**
+- Successful Update
 
 ![image](https://github.com/user-attachments/assets/4ba0aaee-246d-4e53-b894-a51c66097015)
 
-**Delete Recently Updated User
-**
+- Delete Recently Updated User
+
 
 ![image](https://github.com/user-attachments/assets/b3166af7-5d18-4b94-ae9d-47246ac1cd31)
 
 ### Job Management (CRUD Operations for Jobs)
-**Follows the same workflow as user management.
-**
+- Follows the same workflow as user management.
+
 
 ### Application Management (Approve, Reject, Edit Applications)
 
-**Approve First 3, Reject the Next 2
-**
+- Approve First 3, Reject the Next 2
 
 ![image](https://github.com/user-attachments/assets/0f553c0e-5155-454b-8708-04b5cfd35fb2)
 
