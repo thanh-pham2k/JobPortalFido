@@ -149,12 +149,12 @@ npm start
 
 
 ### Admin Panel
-**Admin Login (admin@gmail.com) - Panel Button Visible
-**
+- Admin Login (admin@gmail.com) - Panel Button Visible
+
 
 ![image](https://github.com/user-attachments/assets/a2baaadf-0e7b-49b9-8835-6161c908738a)
-**Successful Login - Access to Admin Panel
-**
+- Successful Login - Access to Admin Panel
+
 
 ![image](https://github.com/user-attachments/assets/dfcf927d-a6e1-452d-b7a7-e00ada3d4784)
 
